@@ -1,0 +1,407 @@
+/* 
+Course: Web Assignment 2 
+Author： Wenqian Zhu, Yilei Shen, Dezhi Kong
+Date：July 13, 2024
+*/
+
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+form, label,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+/* END CSS Reset*/
+
+/* Common Styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    padding-top: 60px;
+	padding-bottom:60px;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2em;
+    font-family:cursive;
+}
+
+h2 {
+    font-size: 1.75em;
+    font-family: cursive;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 0.875em;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+main{
+    margin-top: 10px;
+    padding-top: 10px;
+    margin-left: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*index page Hero-Image style*/
+.hero-image {
+    background: url(../img/cover1.png) no-repeat center; 
+    background-size: cover;
+    height: 900px;
+    position: relative;
+    opacity:0.8;
+  }
+  
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(34, 7, 7);
+  }
+
+/*Button style*/
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4cae2a;
+    color: white;
+    font-size: 1em;
+    margin:10px;
+}
+
+button[type=reset] {
+    background-color: #e26911;
+}
+
+button[type=cancel] {
+    background-color: #e26911;
+}
+
+
+/* recipe.php page edith & delete button */
+.button-container button {
+    width: auto; 
+    display: inline-block;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start; 
+    margin: auto;
+}
+
+.button-container button {
+    margin: 0; /* Remove default margin */
+}
+
+
+/* Top Navigation */
+.topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #bda56d;
+    padding: 0 10px;
+    margin-right: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays on top */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 2px 2px;
+}
+
+
+
+.topnav a:hover {
+    background-color: #cee18b; /* Light grey */
+    color: white;
+}
+
+/* Specific hover styles for the split links */
+.topnav a.split:hover {
+    background-color:#cee18b; /* light green for split links */
+    color: white;
+}
+
+/* first page text centered*/
+.centered {
+    position: absolute;
+    top: 65%;
+    left: 77%;
+    transform: translate(-50%, -50%);
+    color: #833d18;
+    font-size: 7em;
+    font-family: cursive;
+    background-image: url("../img/cover1.png");
+}
+
+
+/* Create a right-aligned (split) link inside the navigation bar */
+.topnav a.split {
+    float: right;
+    background-color: #3a9204;
+    color: white;
+	justify-content: space-between; /* Space out items horizontally */
+}
+
+.recipe-search, .recipe-list, .recipe-form {
+    flex: 1; /* Columns will grow equally */
+    padding: 10px; /* Optional: Add padding inside each column */
+    margin:20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:0 20px;
+    margin:0 20px;
+}
+.recipe-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: calc(100% - 40px);
+}
+
+ .recipe-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: calc(100%-40px);
+    max-width: 600px;
+    background-color: #fff;
+}
+
+/* Form Styles */
+.formcontainer {
+    width: 40%;
+    margin: 40px 40px;
+    padding: 20px;
+}
+
+.textfield {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+}
+
+.checkbox{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+input[type=email], input[type=text], input[type=password], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+input:focus, textarea:focus {
+    background-color: #fadfb2;
+}
+
+
+/* Layout for Recipe Page */
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: calc(100% - 40px); /* Adjusted to prevent overflow */
+}
+
+recipe-list, .content{
+    width: 100%;
+    padding: 10px 10px;
+    margin:10px 20px;
+}
+
+
+/*select style*/
+select{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Add Recipe Form */
+form {
+    margin: 20px;
+}
+
+
+/* registration Form */
+form input[type="text"], form textarea, form [input=password] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 800px) {
+    .formcontainer {   
+        width: 100%;
+        flex-direction: column;
+        margin:0 10px;
+    }
+    .content {
+        flex-direction: column;
+        margin: 0 10px;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .formcontainer {   
+        width: 100%;
+        flex-direction: column;
+        margin:0 10px;
+    }
+    .content {
+        flex-direction: column;
+        margin: 0 10px;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #bda56d;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+	z-index: 1000;
+}
+/* message popup */
+.message-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 2px solid #000;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.message-popup.success {
+    border-color: green;
+    color: green;
+}
+
+.message-popup.error {
+    border-color: red;
+    color: red;
+}
+
+.message-popup .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.pagination a.active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+    color: black;
+}
