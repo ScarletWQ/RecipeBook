@@ -38,7 +38,7 @@ Server: Apache (XAMPP)
 **Installation**  
 1. Clone the repository:  
 
-git clone https://github.com/yourusername/RecipeBook.git
+git clone https://github.com/ScarletWQ/RecipeBook.git
 
 2. Move into the project directory:
 
